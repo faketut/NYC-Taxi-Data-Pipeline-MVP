@@ -1,0 +1,71 @@
+version: 2
+
+sources:
+  - name: nyc_taxi
+    database: "{{ env_var('GCP_PROJECT_ID') }}"
+    schema: nyc_taxi_data
+    tables:
+      - name: yellow_tripdata
+        description: "NYC Yellow Taxi Trip Data"
+
+models:
+  - name: dim_zones
+    description: "NYC Taxi Zones"
+    columns:
+      - name: location_id
+        description: "Zone identifier"
+        tests:
+          - unique
+          - not_null
+      - name: borough
+        description: "NYC borough"
+      - name: zone
+        description: "Zone name"
+
+  - name: dim_datetime
+    description: "Date and time dimension table"
+    columns:
+      - name: datetime_id
+        description: "Datetime identifier"
+        tests:
+          - unique
+          - not_null
+      - name: hour
+        description: "Hour of day (0-23)"
+      - name: day
+        description: "Day of month"
+      - name: month
+        description: "Month of year"
+      - name: year
+        description: "Year"
+      - name: weekday
+        description: "Day of week"
+      - name: is_weekend
+        description: "Whether the day is a weekend"
+
+  - name: fact_trips
+    description: "Taxi trips fact table"
+    columns:
+      - name: trip_id
+        description: "Unique trip identifier"
+        tests:
+          - unique
+          - not_null
+      - name: pickup_datetime_id
+        description: "Reference to dim_datetime for pickup"
+      - name: dropoff_datetime_id
+        description: "Reference to dim_datetime for dropoff"
+      - name: pickup_location_id
+        description: "Reference to dim_zones for pickup"
+      - name: dropoff_location_id
+        description: "Reference to dim_zones for dropoff"
+      - name: passenger_count
+        description: "Number of passengers"
+      - name: trip_distance
+        description: "Trip distance in miles"
+      - name: fare_amount
+        description: "Base fare amount"
+      - name: tip_amount
+        description: "Tip amount"
+      - name: total_amount
+        description: "Total fare amount"
