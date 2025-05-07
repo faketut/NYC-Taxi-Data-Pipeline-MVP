@@ -28,7 +28,7 @@ The architecture consists of:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/username/nyc-taxi-pipeline.git
+git clone https://github.com/faketut/NYC-Taxi-Data-Pipeline-MVP.git
 cd nyc-taxi-pipeline
 ```
 
