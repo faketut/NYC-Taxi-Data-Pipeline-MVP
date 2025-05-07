@@ -88,7 +88,7 @@ gcloud compute ssh airflow-instance --project $GCP_PROJECT_ID --zone $GCP_REGION
 Clone the repository on the VM and set up Airflow:
 
 ```bash
-git clone https://github.com/username/nyc-taxi-pipeline.git
+git clone https://github.com/faketut/NYC-Taxi-Data-Pipeline-MVP.git
 cd nyc-taxi-pipeline
 
 # Initialize Airflow database
