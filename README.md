@@ -3,6 +3,7 @@
 This project implements an end-to-end data pipeline for analyzing NYC Yellow Taxi Trip data, including data ingestion, processing, transformation, and visualization.
 
 ## Architecture
+```mermaid
 flowchart TD
     subgraph "Data Source"
         TLC["NYC TLC Yellow Taxi Trip Data"]
@@ -87,7 +88,7 @@ flowchart TD
     class T1,T2,T3,T4,DBT,DIM,FACT,MART process
     class GCS,RAW,PROC,BQ,EXT,OPT storage
     class LS,D1,D2,KPI visualization
-
+```
 The architecture consists of:
 
 1. **Data Source**: NYC TLC Yellow Taxi Trip Data
