@@ -4,7 +4,7 @@ This project implements an end-to-end data pipeline for analyzing NYC Yellow Tax
 
 ## Architecture
 
-![NYC Taxi Data Pipeline Architecture](./architecture_diagran.mermaid)
+![NYC Taxi Data Pipeline Architecture](./architecture_diagram.mermaid)
 
 The architecture consists of:
 
